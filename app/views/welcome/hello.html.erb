@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="page-header">
+    <h1>Welcome to Melissa's Scaffolding Practice</h1>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <h3>People</h3>
+      <% @people.each do |person| %>
+        <ul>
+          <li><b><%= "#{person.first_name} #{person.middle_name} #{person.last_name}" %></b></li>
+        </ul>
+      <% end %>
+      <%= link_to "New Person", new_person_path %>
+    </div>
+  </div>
+
+  <hr>
+  <div class="row">
+    <div class="col-md-4">
+      <h2>Organizations</h2>
+        <% @organizations.each do |organization| %>
+      <ul>
+        <li><b><%= "#{organization.name} #{organization.number_of_employees}" %></b></li>
+      </ul>
+    <% end %>
+    <%= link_to 'New Organization', new_organization_path %>
+  </div>
+</div>
+</div>

@@ -1,14 +1,7 @@
 <h1>Listing people</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>First name</th>
-      <th>Last name</th>
-      <th>Date of birth</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<h3>First Name, Middle Name, Last Name, and Date of Birth</h3>
+
 
   <tbody>
     <% @people.each do |person| %>
@@ -18,7 +11,7 @@
         <td><%= person.date_of_birth %></td>
         <td><%= link_to 'Show', person %></td>
         <td><%= link_to 'Edit', edit_person_path(person) %></td>
-        <td><%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' } %></td><br>
       </tr>
     <% end %>
   </tbody>
