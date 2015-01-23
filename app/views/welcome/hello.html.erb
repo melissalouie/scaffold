@@ -2,7 +2,7 @@
   <div class="page-header">
     <h1>Welcome to Melissa's Scaffolding Practice</h1>
   </div>
-  <div class="row">
+  <!-- <div class="row">
     <div class="col-md-4">
       <h3>People</h3>
       <% @people.each do |person| %>
@@ -25,5 +25,40 @@
     <% end %>
     <%= link_to 'New Organization', new_organization_path %>
   </div>
-</div>
-</div>
+</div> -->
+
+<div class="row">
+  <div class="col-md-4">
+    <h3>People</h3>
+      <% @collection.each do |item| %>
+        <% item.each do |obj| %>
+          <% if obj.class.name == "Person" %>
+            <ul>
+              <li><%= "#{obj.first_name} #{obj.middle_name} #{obj.last_name}"  %></li>
+            </ul>
+          <% end %>
+        <% end %>
+      <% end %>
+    <hr>
+      <h3>Organizations</h3>
+        <% @collection.each do |item| %>
+          <% item.each do |obj| %>
+            <% if obj.class.name == "Organization" %>
+              <ul>
+                <li><b><%= "#{obj.name}" %></b><%=" Number of Employees:#{obj.number_of_employees}" %></li>
+              </ul>
+            <% end %>
+          <% end %>
+        <% end %>
+      <hr>
+        <h4>TV Shows</h4>
+          <% @collection.each do |item| %>
+            <% item.each do |obj| %>
+              <% if obj.class.name == "TvShow" %>
+                <%="#{obj.name} #{obj.main_actor} #{obj.genre}" %>
+              <% end %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
